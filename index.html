@@ -3,150 +3,218 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Rochit Singh Stocks</title>
- 
+  <title>Rochit Singh Stocks | Official Community</title>
+
   <!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1426521112921774');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1639559540847539');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+  src="https://www.facebook.com/tr?id=1639559540847539&ev=PageView&noscript=1"
+  /></noscript>
+  <!-- End Meta Pixel Code -->
+
   <style>
+    :root {
+      --bg-dark: #09090b;
+      --card-bg: #141417;
+      --card-border: #242429;
+      --gold: #ffc400;
+      --gold-glow: rgba(255, 196, 0, 0.25);
+      --tg-blue: #0088cc;
+      --tg-blue-hover: #0099e6;
+      --success: #22c55e;
+      --text-muted: #9ca3af;
+    }
+
     * {
       box-sizing: border-box;
       margin: 0;
       padding: 0;
       font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      -webkit-tap-highlight-color: transparent;
     }
 
     body {
-      background-color: #0d0d0d;
+      background-color: var(--bg-dark);
       color: #ffffff;
       display: flex;
+      flex-direction: column;
       justify-content: center;
       align-items: center;
       min-height: 100vh;
-      padding: 20px;
+      padding: 16px 16px 90px 16px; /* Bottom space for sticky CTA */
     }
 
-    /* Main Card Container */
+    /* Urgency Banner */
+    .urgency-badge {
+      background: rgba(239, 68, 68, 0.12);
+      border: 1px solid rgba(239, 68, 68, 0.3);
+      color: #f87171;
+      padding: 6px 14px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      letter-spacing: 0.3px;
+    }
+
+    .pulse-dot {
+      width: 8px;
+      height: 8px;
+      background-color: #ef4444;
+      border-radius: 50%;
+      animation: flash 1.2s infinite;
+    }
+
+    /* Main Card */
     .card {
-      background-color: #161616;
-      border: 1px solid #282828;
-      border-radius: 28px;
+      background: radial-gradient(circle at top, #1a1a20, var(--card-bg));
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
       width: 100%;
-      max-width: 420px;
-      padding: 32px 24px;
+      max-width: 410px;
+      padding: 28px 20px 22px 20px;
       display: flex;
       flex-direction: column;
       align-items: center;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-      animation: fadeIn 0.8s ease-out;
+      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.7);
+      animation: fadeIn 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+      position: relative;
     }
 
-    /* Profile Image */
+    /* Profile Wrapper */
+    .avatar-wrapper {
+      position: relative;
+      margin-bottom: 16px;
+    }
+
     .profile-img {
-      width: 110px;
-      height: 110px;
+      width: 105px;
+      height: 105px;
       border-radius: 50%;
-      border: 3px solid #ffcc00;
+      border: 3px solid var(--gold);
       object-fit: cover;
-      margin-bottom: 20px;
-      box-shadow: 0 0 15px rgba(255, 204, 0, 0.3);
-      animation: zoomIn 0.8s ease-out;
+      box-shadow: 0 0 20px var(--gold-glow);
+      display: block;
     }
 
-    /* Title Section */
-    .title-container {
-      text-align: center;
-      margin-bottom: 12px;
-    }
-
-    .title {
-      color: #ffcc00;
-      font-size: 24px;
-      font-weight: 800;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
+    .verified-badge {
+      position: absolute;
+      bottom: 2px;
+      right: 4px;
+      background: #0088cc;
+      color: #fff;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-    }
-
-    .crown {
-      font-size: 20px;
-    }
-
-    /* Subtitle Tag */
-    .tagline {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
-      font-size: 14px;
-      color: #e0e0e0;
-      margin-top: 8px;
-      margin-bottom: 24px;
-    }
-
-    .check-icon {
-      background-color: #22c55e;
-      color: #000;
-      font-size: 10px;
+      border: 2px solid var(--card-bg);
+      font-size: 13px;
       font-weight: bold;
-      width: 16px;
-      height: 16px;
-      border-radius: 3px;
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
     }
 
-    /* Info Buttons */
-    .info-btn {
-      width: 100%;
-      background-color: #212121;
-      border: 1px solid #2a2a2a;
-      border-radius: 14px;
-      padding: 14px;
+    /* Titles */
+    .title {
+      color: var(--gold);
+      font-size: 21px;
+      font-weight: 900;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
       text-align: center;
-      font-size: 15px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 12px;
+      margin-bottom: 6px;
     }
 
-    /* Main CTA Join Button */
-    .cta-button {
+    .social-proof {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-muted);
+      margin-bottom: 20px;
+    }
+
+    .live-dot {
+      width: 7px;
+      height: 7px;
+      background: var(--success);
+      border-radius: 50%;
+      box-shadow: 0 0 8px var(--success);
+      animation: flash 1.4s infinite;
+    }
+
+    /* Highlights Row */
+    .highlights-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
       width: 100%;
-      background-color: #0088cc;
+      margin-bottom: 16px;
+    }
+
+    .highlight-box {
+      background: #1c1c21;
+      border: 1px solid #292932;
+      border-radius: 12px;
+      padding: 10px 8px;
+      text-align: center;
+      font-size: 13px;
+      font-weight: 600;
+      color: #e2e8f0;
+    }
+
+    /* CTA Button with Shimmer */
+    .cta-button {
+      position: relative;
+      width: 100%;
+      background: linear-gradient(135deg, #0088cc, #006699);
       color: #ffffff;
       text-decoration: none;
-      font-size: 18px;
+      font-size: 17px;
       font-weight: 700;
-      padding: 16px;
-      border-radius: 30px;
+      padding: 16px 20px;
+      border-radius: 16px;
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 10px;
-      margin: 8px 0 20px 0;
-      box-shadow: 0 4px 15px rgba(0, 136, 204, 0.4);
-      animation: pulse 2s infinite;
-      transition: transform 0.2s ease;
+      margin-bottom: 18px;
+      box-shadow: 0 8px 24px rgba(0, 136, 204, 0.45);
+      overflow: hidden;
+      cursor: pointer;
+      border: none;
+      transition: transform 0.15s ease;
+    }
+
+    .cta-button::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -60%;
+      width: 40%;
+      height: 200%;
+      background: linear-gradient(
+        60deg,
+        rgba(255, 255, 255, 0) 20%,
+        rgba(255, 255, 255, 0.3) 50%,
+        rgba(255, 255, 255, 0) 80%
+      );
+      transform: rotate(25deg);
+      animation: shimmer 3s infinite ease-in-out;
     }
 
     .cta-button:active {
@@ -154,34 +222,42 @@ src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
     }
 
     .telegram-icon {
-      width: 20px;
-      height: 20px;
+      width: 22px;
+      height: 22px;
       fill: currentColor;
+      flex-shrink: 0;
     }
 
-    /* Feature List Items */
-    .feature-item {
+    /* Value Pillars */
+    .feature-list {
       width: 100%;
-      background-color: #212121;
-      border: 1px solid #2a2a2a;
-      border-radius: 14px;
-      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 9px;
+      margin-bottom: 16px;
+    }
+
+    .feature-item {
+      background: #18181d;
+      border: 1px solid #26262e;
+      border-radius: 12px;
+      padding: 12px 14px;
       display: flex;
       align-items: center;
-      gap: 12px;
-      font-size: 15px;
-      font-weight: 600;
-      color: #ffffff;
-      margin-bottom: 12px;
+      gap: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      color: #f1f5f9;
     }
 
     .feature-check {
-      background-color: #22c55e;
-      color: #000;
+      background: rgba(34, 197, 94, 0.15);
+      color: var(--success);
+      border: 1px solid rgba(34, 197, 94, 0.4);
       font-size: 11px;
-      font-weight: bold;
-      width: 18px;
-      height: 18px;
+      font-weight: 800;
+      width: 20px;
+      height: 20px;
       border-radius: 50%;
       display: flex;
       align-items: center;
@@ -189,13 +265,14 @@ src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
       flex-shrink: 0;
     }
 
-    /* Footer Links */
+    /* Footer Navigation */
     .footer-links {
       display: flex;
-      gap: 12px;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid #282828;
+      flex-wrap: wrap;
+      gap: 10px 14px;
+      margin-top: 8px;
+      padding-top: 14px;
+      border-top: 1px solid var(--card-border);
       width: 100%;
       justify-content: center;
     }
@@ -203,34 +280,68 @@ src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
     .footer-links button {
       background: none;
       border: none;
-      color: #888888;
-      font-size: 12px;
+      color: #71717a;
+      font-size: 11px;
       text-decoration: underline;
       cursor: pointer;
       transition: color 0.2s;
     }
 
     .footer-links button:hover {
-      color: #ffffff;
+      color: #e4e4e7;
     }
 
-    /* Modal (Popup) Styles */
+    /* Sticky Bottom Mobile Bar */
+    .sticky-bar {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      background: rgba(14, 14, 17, 0.92);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      border-top: 1px solid #27272a;
+      padding: 12px 16px;
+      display: flex;
+      justify-content: center;
+      z-index: 100;
+    }
+
+    .sticky-btn {
+      width: 100%;
+      max-width: 410px;
+      background: var(--tg-blue);
+      color: #ffffff;
+      padding: 14px;
+      border-radius: 12px;
+      font-size: 16px;
+      font-weight: 700;
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      box-shadow: 0 4px 18px rgba(0, 136, 204, 0.4);
+    }
+
+    /* Popups (Modal) */
     .modal-overlay {
       position: fixed;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background-color: rgba(0, 0, 0, 0.75);
-      backdrop-filter: blur(4px);
+      background: rgba(0, 0, 0, 0.82);
+      backdrop-filter: blur(5px);
+      -webkit-backdrop-filter: blur(5px);
       display: flex;
       justify-content: center;
       align-items: center;
       opacity: 0;
       visibility: hidden;
-      transition: opacity 0.3s ease, visibility 0.3s ease;
+      transition: all 0.25s ease;
       z-index: 1000;
-      padding: 20px;
+      padding: 16px;
     }
 
     .modal-overlay.active {
@@ -239,16 +350,14 @@ src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
     }
 
     .modal-box {
-      background-color: #1e1e1e;
-      border: 1px solid #333;
-      border-radius: 20px;
+      background: #19191e;
+      border: 1px solid #2f2f38;
+      border-radius: 18px;
       width: 100%;
-      max-width: 400px;
-      padding: 24px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
-      transform: scale(0.9);
-      transition: transform 0.3s ease;
-      position: relative;
+      max-width: 380px;
+      padding: 20px;
+      transform: scale(0.92);
+      transition: transform 0.25s ease;
     }
 
     .modal-overlay.active .modal-box {
@@ -259,154 +368,177 @@ src="https://www.facebook.com/tr?id=1426521112921774&ev=PageView&noscript=1"
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 16px;
-      padding-bottom: 10px;
-      border-bottom: 1px solid #2c2c2c;
+      margin-bottom: 12px;
+      padding-bottom: 8px;
+      border-bottom: 1px solid #2a2a33;
     }
 
     .modal-title {
-      font-size: 18px;
+      font-size: 16px;
       font-weight: 700;
-      color: #ffcc00;
+      color: var(--gold);
     }
 
     .close-btn {
       background: none;
       border: none;
-      color: #aaa;
-      font-size: 24px;
+      color: #888;
+      font-size: 22px;
       cursor: pointer;
-      line-height: 1;
-    }
-
-    .close-btn:hover {
-      color: #fff;
     }
 
     .modal-body {
-      font-size: 14px;
-      color: #ccc;
+      font-size: 13px;
+      color: #d1d5db;
       line-height: 1.6;
-      max-height: 250px;
+      max-height: 240px;
       overflow-y: auto;
     }
 
-    /* Keyframe Animations */
+    /* Keyframes */
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(20px); }
+      from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
 
-    @keyframes zoomIn {
-      from { transform: scale(0.8); opacity: 0; }
-      to { transform: scale(1); opacity: 1; }
+    @keyframes shimmer {
+      0% { left: -60%; }
+      40% { left: 140%; }
+      100% { left: 140%; }
     }
 
-    @keyframes pulse {
-      0% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0.7); }
-      70% { box-shadow: 0 0 0 15px rgba(0, 136, 204, 0); }
-      100% { box-shadow: 0 0 0 0 rgba(0, 136, 204, 0); }
+    @keyframes flash {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
     }
   </style>
-
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '1639559540847539');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=1639559540847539&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-  
 </head>
 <body>
 
+  <!-- Dynamic Urgency Timer -->
+  <div class="urgency-badge">
+    <span class="pulse-dot"></span>
+    <span>Free Invite Link Expires in <span id="timer">04:59</span></span>
+  </div>
+
   <div class="card">
-    <img src="rochit.jpeg" alt="Rochit Singh" class="profile-img" />
-
-    <div class="title-container">
-      <div class="title">
-        <span class="crown">👑</span> ROCHIT SINGH STOCKS <span class="crown">👑</span>
-      </div>
+    <div class="avatar-wrapper">
+      <img src="rochit.jpeg" alt="Rochit Singh" class="profile-img" />
+      <div class="verified-badge">✓</div>
     </div>
 
-    <div class="tagline">
-      <span class="check-icon">✓</span>
-      <span>Trusted by thousands of learners</span>
+    <h1 class="title">Rochit Singh Stocks</h1>
+
+    <div class="social-proof">
+      <span class="live-dot"></span>
+      <span>12,480+ Traders Learning Daily</span>
     </div>
 
-    <div class="info-btn">24/7 Updates</div>
-    <div class="info-btn">Free to Join</div>
+    <div class="highlights-grid">
+      <div class="highlight-box">⚡ 100% Free Entry</div>
+      <div class="highlight-box">📊 Real-Time Charts</div>
+    </div>
 
-    <a href="https://t.me/+fuaXs2SEPwUzYmM1" class="cta-button" target="_blank">
+    <!-- Main In-card CTA -->
+    <a href="https://t.me/+fuaXs2SEPwUzYmM1" class="cta-button" target="_blank" onclick="trackLead()">
       <svg class="telegram-icon" viewBox="0 0 24 24">
         <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 4-1.74 6.68-2.88 8.04-3.44 3.83-1.58 4.62-1.86 5.14-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.01.21-.02.32z"/>
       </svg>
-      Join on Telegram
+      Join Official Telegram
     </a>
 
-    <div class="feature-item">
-      <span class="feature-check">✓</span>
-      <span>Market Insights & Discussions</span>
+    <!-- Feature Pillars -->
+    <div class="feature-list">
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span>Daily Nifty & BankNifty Breakdown</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span>Price Action & Technical Setups</span>
+      </div>
+      <div class="feature-item">
+        <span class="feature-check">✓</span>
+        <span>Disciplined Risk-Management Rules</span>
+      </div>
     </div>
 
-    <div class="feature-item">
-      <span class="feature-check">✓</span>
-      <span>Learn with Experts</span>
-    </div>
-
-    <div class="feature-item">
-      <span class="feature-check">✓</span>
-      <span>Practical Strategies</span>
-    </div>
-
+    <!-- Legal Compliance Links -->
     <div class="footer-links">
-      <button onclick="openModal('about')">About Us</button>
-      <button onclick="openModal('terms')">Terms & Conditions</button>
-      <button onclick="openModal('disclaimer')">Disclaimer</button>
-      <button onclick="openModal('contact')">Contact Us</button>
+      <button onclick="openModal('about')">About</button>
+      <button onclick="openModal('disclaimer')">SEBI Disclaimer</button>
+      <button onclick="openModal('terms')">Terms</button>
+      <button onclick="openModal('privacy')">Privacy</button>
+      <button onclick="openModal('contact')">Support</button>
     </div>
   </div>
 
+  <!-- Sticky Bottom CTA for Mobile Conversions -->
+  <div class="sticky-bar">
+    <a href="https://t.me/+fuaXs2SEPwUzYmM1" class="sticky-btn" target="_blank" onclick="trackLead()">
+      <svg class="telegram-icon" viewBox="0 0 24 24">
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm4.64 6.8c-.15 1.58-.8 5.42-1.13 7.19-.14.75-.42 1-.68 1.03-.58.05-1.02-.38-1.58-.75-.88-.58-1.38-.94-2.23-1.5-.99-.65-.35-1.01.22-1.59.15-.15 2.71-2.48 2.76-2.69.01-.03.01-.14-.07-.2-.08-.06-.19-.04-.27-.02-.12.02-1.96 1.25-5.54 3.69-.52.36-1 .53-1.42.52-.47-.01-1.37-.26-2.03-.48-.82-.27-1.47-.42-1.42-.88.03-.24.37-.49 1.02-.75 4-1.74 6.68-2.88 8.04-3.44 3.83-1.58 4.62-1.86 5.14-1.87.11 0 .37.03.54.17.14.12.18.28.2.45-.02.07-.01.21-.02.32z"/>
+      </svg>
+      Join Free Telegram Now
+    </a>
+  </div>
+
+  <!-- Compliance Modal -->
   <div class="modal-overlay" id="infoModal" onclick="closeModalOnOutsideClick(event)">
     <div class="modal-box">
       <div class="modal-header">
         <div class="modal-title" id="modalTitle">Header</div>
         <button class="close-btn" onclick="closeModal()">&times;</button>
       </div>
-      <div class="modal-body" id="modalContent">
-        Content goes here...
-      </div>
+      <div class="modal-body" id="modalContent"></div>
     </div>
   </div>
 
   <script>
-    // Content for each link
+    // 5-minute countdown loop
+    let duration = 5 * 60;
+    const timerDisplay = document.getElementById('timer');
+
+    setInterval(() => {
+      let minutes = Math.floor(duration / 60);
+      let seconds = duration % 60;
+      minutes = minutes < 10 ? '0' + minutes : minutes;
+      seconds = seconds < 10 ? '0' + seconds : seconds;
+      timerDisplay.textContent = `${minutes}:${seconds}`;
+
+      if (--duration < 0) {
+        duration = 5 * 60; // reset
+      }
+    }, 1000);
+
+    // Meta Pixel Conversion Event
+    function trackLead() {
+      if (typeof fbq === 'function') {
+        fbq('track', 'Lead');
+      }
+    }
+
+    // Modal Content
     const modalData = {
       about: {
-        title: "About Us",
-        content: "Welcome to Rochit Singh Stocks. We provide Educational Market Insights, Technical Analysis, and Learning content for stock market enthusiasts."
+        title: "About Rochit Singh Stocks",
+        content: "Rochit Singh Stocks is an open learning community focused on teaching technical analysis, price action setups, and trading discipline to learners across India."
+      },
+      disclaimer: {
+        title: "SEBI Disclaimer & Risk Warning",
+        content: "We are NOT SEBI registered advisors. All posts, technical charts, analysis, and discussions shared on our Telegram channel are strictly for educational and study purposes only. Stock and derivatives trading involve significant capital risk. We do not provide financial advice, tip services, or profit assurances. Always consult your certified financial planner."
       },
       terms: {
         title: "Terms & Conditions",
-        content: "All content provided on this channel is for educational purposes only. We are not responsible for any financial profits or losses."
+        content: "By joining our Telegram group, you agree that you participate voluntarily for educational research. We are not liable for any financial decisions, trades, or capital losses executed by members."
       },
-      disclaimer: {
-        title: "Disclaimer",
-        content: "Trading and investing in stock markets involves financial risk. Please consult your financial advisor before making any investment decisions."
+      privacy: {
+        title: "Privacy Policy",
+        content: "We value your privacy. We do not sell or share personal user information with external third parties. Access to the Telegram channel is handled directly via Telegram's native privacy protocols."
       },
       contact: {
-        title: "Contact Us",
-        content: "For inquiries and support, connect with us on Telegram: <br><br><b>Telegram Link:</b> https://t.me/+fuaXs2SEPwUzYmM1"
+        title: "Support & Contact",
+        content: "For community questions, collaborations, or inquiries, reach out through our official Telegram: <br><br><b>Telegram:</b> <a href='https://t.me/+fuaXs2SEPwUzYmM1' style='color:#0088cc;'>@RochitSinghStocks</a>"
       }
     };
 
@@ -428,6 +560,5 @@ src="https://www.facebook.com/tr?id=1639559540847539&ev=PageView&noscript=1"
       }
     }
   </script>
-
 </body>
 </html>
